@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Result Management System</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <div class="header-box text-center  mb-4">
+        <h3>Result Management System</h3>
+    </div>
+
+<div class="card p-4 shadow-sm" id="formCard">
+<h5 class="text-center mb-3">Add Student Result</h5>
+
+<form id="resultForm">
+
+<div class="mb-3">
+<label>Roll No.</label>
+<input type="number"  class="form-control" id="roll" placeholder="Enter roll number">
+<small class="text-danger d-none" id="rollErr">Roll no is required</small>
+</div>
+
+  <div class="mb-3">
+     <label>Name</label>
+  <input type="text" class="form-control" id="name"    placeholder="Enter student name">
+  <small class="text-danger d-none" id="nameErr">Name is required</small>
+  </div>
+
+
+    <div class="mb-3">
+<label>Date of Birth</label>
+  <input type="date" class="form-control"  id="dob">
+<small class="text-danger d-none" id="dobErr">Date of birth is required</small>
+</div>
+
+
+<div class="mb-3">
+<label>Score</label>
+<input type="number" class="form-control" id="score" placeholder="Enter score (0-100)">
+<small class="text-danger d-none" id="scoreErr">Valid score is required</small>
+</div>
+
+<button type="button" class="btn btn-success" onclick="addResult()">Add</button>
+  <button type="button" class="btn btn-primary ms-2" onclick="showList()">View All</button>
+
+</form>
+</div>
+
+
+<div class="mt-4 d-none" id="tableBox">
+<h5 class="mb-3">All Student Results</h5>
+
+<table class="table table-bordered table-striped">
+<thead class="table-light">
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>DOB</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody id="resultTable">
+</tbody>
+</table>
+
+<button class="btn btn-secondary"  onclick="hideList()">Back</button>
+</div>
+
+</div>
+
+
+<script src="codefile.js"></script>
+</body>
+</html>
